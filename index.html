@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KCY - Community Token (Test)</title>
+  <style>
+    body { font-family: Inter, system-ui, Arial; margin:0; padding:0; color:#222; background:#f7f8fa; }
+    .container{max-width:980px;margin:24px auto;padding:20px;background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.06);}
+    header {display:flex;align-items:center;gap:16px}
+    img.logo{width:72px;height:72px;border-radius:12px}
+    h1{margin:0;font-size:24px}
+    p.lead{color:#555}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+    .card{background:#fff;padding:16px;border-radius:8px;border:1px solid #eee}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#f0b90b;color:#111;text-decoration:none;font-weight:600}
+    .muted{color:#666;font-size:14px}
+    footer{margin-top:20px;color:#888;font-size:13px}
+    pre {background:#f4f6f8;padding:10px;border-radius:6px;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="logo" src="https://ipfs.io/ipfs/bafkreidy34zhsx53vuqflgadvwana5fw3aaazqr2b2rls6mxj32g6ajupy" alt="KCY logo"/>
+      <div>
+        <h1>KCY-tst-1 (KCY)</h1>
+        <p class="lead">Community token on BNB Smart Chain — halving every 2 years, mintable by approved minter contracts.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h3>Кратко</h3>
+          <p class="muted">Име: KCY-v-1<br/>Symbol: KCY<br/>Decimals: 18<br/>Network: Binance Smart Chain</p>
+          <p><strong>Metadata (IPFS):</strong> <a href="https://ipfs.io/ipfs/bafkreids57wwuktwt54ziramkon3us7njonvxzvtgfdcq7ev7efa4jzkwi" target="_blank">ipfs://bafkreifw...</a></p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Tokenomics (пример)</h3>
+          <ul>
+            <li>Total supply: <strong>13,000,000 KCY</strong></li>
+            <li>Initial liquidity: <strong>300,000 KCY + $300</strong></li>
+            <li>Reserved (owner): <strong>12,700,000 KCY</strong></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>How to buy</h3>
+          <p class="muted">After the pool is created use PancakeSwap. (попълни <code>CONTRACT_ADDRESS</code>):</p>
+          <pre>https://pancakeswap.finance/swap?outputCurrency=CONTRACT_ADDRESS</pre>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Contacts / Social</h3>
+          <p><a href="https://t.me/your_channel" target="_blank">Telegram</a> • <a href="https://twitter.com/your_handle" target="_blank">Twitter</a></p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Contract</h3>
+          <p class="muted">Contract address (BSC Test/Main):</p>
+          <pre id="contract">PUT_CONTRACT_ADDRESS_HERE</pre>
+          <p style="margin-top:8px"><a id="bscscan" class="btn" href="#" target="_blank">View on BscScan</a></p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick actions</h3>
+          <p><a id="buyBtn" class="btn" href="#" target="_blank">Buy on PancakeSwap</a></p>
+          <p style="margin-top:8px" class="muted">Add token to MetaMask: copy contract address and use Import Token → Custom Token.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>This is not a scam. Just the very first initial of something great!</p>
+    </footer>
+  </div>
+
+  <script>
+    // Replace placeholders easily if you host via raw HTML
+    const contract = "PUT_CONTRACT_ADDRESS_HERE";
+    if(contract !== "PUT_CONTRACT_ADDRESS_HERE"){
+      document.getElementById('contract').innerText = contract;
+      document.getElementById('bscscan').href = 'https://bscscan.com/address/' + contract;
+      document.getElementById('buyBtn').href = 'https://pancakeswap.finance/swap?outputCurrency=' + contract;
+      document.getElementById('buyBtn').target = '_blank';
+    } else {
+      // show example
+      document.getElementById('bscscan').href = '#';
+      document.getElementById('buyBtn').href = '#';
+    }
+  </script>
+</body>
+</html>
